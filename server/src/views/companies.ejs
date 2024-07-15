@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Companies</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Companies</h1>
+    <form action="/companiesRoute/add" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="text" name="phone" placeholder="Phone" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit">Add Company</button>
+    </form>
+    <ul>
+        <% companies.forEach(company => { %>
+            <li>
+                <%= company.name %> - <%= company.address %> - <%= company.phone %> - <%= company.email %>
+                <!-- Add edit and delete buttons here -->
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/">HOME</a>
+</body>
+</html>

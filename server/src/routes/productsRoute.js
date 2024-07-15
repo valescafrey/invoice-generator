@@ -1,9 +1,9 @@
 
 
 import express from 'express';
-import { getAllProducts, addProduct } from '../controllers/productsController.js';
+import { getAllProducts, createProduct } from '../controllers/productsController.js';
 
-const router = express.Router(); // SHOULD I CHANGE THHIS CONS NAME TO productsRouter
+const router = express.Router(); // SHOULD I CHANGE THIS CONS NAME TO productsRouter
 
 // Route to get all products
 router.get('/', getAllProducts);

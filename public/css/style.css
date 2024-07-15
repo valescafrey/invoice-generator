@@ -3,11 +3,14 @@ body {
     margin:auto;
    font-family:"inherit";
    color: black;
+   background-color: rgb(245, 229, 220);
 }
 
 h2 {color:beige}
 
-.logo {
+
+
+/* .logo {
     width: 150px;
     height: 84px;
     object-fit:cover;
@@ -111,4 +114,4 @@ input#description:hover{
 button[type="submit"]:hover{
     background-color: pink;
     
-}
+} */

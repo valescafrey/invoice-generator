@@ -10,10 +10,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // inform routes
-import companiesRouter from './routes/companies.js';
-import clientsRouter from './routes/clients.js';
-import productsRouter from './routes/products.js';
-import invoiceRouter from './routes/invoice.js';
+import companiesRouter from './routes/companiesRoute.js';
+import clientsRouter from './routes/clientsRoute.js';
+import productsRouter from './routes/productsRoute.js';
+import invoiceRouter from './routes/invoiceRoute.js';
 
 // get directory
 const __filename = fileURLToPath(import.meta.url);
@@ -24,6 +24,7 @@ const app = express();
 
 // middleware to use json (data-base fake)
 app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
 // middleware to request and log time
 app.use((req, res, next) => {
@@ -38,6 +39,10 @@ app.use((req, res, next) => {
 
 //  NAO SEI
 app.use(express.static(`${__dirname}/public/`));
+
+// Set EJS as the template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // routes
 app.use('/companiesRoute', companiesRouter);

@@ -1,13 +1,13 @@
 import { readCompanies, writeCompanies } from '../models/companiesModel.js';
 
 // Get and render all companies
-function getAllCompanies(req, res) {
+export function getAllCompanies(req, res) {
   const companies = readCompanies();
   res.render('companies', { companies });
 }
 
 // create a new company
-function createCompany(req, res) {
+export function createCompany(req, res) {
   const companies = readCompanies();
   const newCompany = req.body;
   newCompany.id = Date.now(); // Create an ID
@@ -16,5 +16,3 @@ function createCompany(req, res) {
   res.end("Company created successfully!");
   res.redirect('/companiesRoutes'); 
 }
-
-module.exports = { getAllCompanies, createCompany };

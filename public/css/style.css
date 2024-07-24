@@ -1,117 +1,36 @@
 
 body {
-    margin:auto;
-   font-family:"inherit";
-   color: black;
-   background-color: rgb(245, 229, 220);
-}
-
-h2 {color:beige}
-
-
-
-/* .logo {
-    width: 150px;
-    height: 84px;
-    object-fit:cover;
-   }
-
-
-.header-container{
-    margin: auto;
-    background-color:   rgb(22, 45, 57);
-    height: 85px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width:100%;
-    gap: 15px;
- }
-
-.nav-container{
-    margin: 10px;
-    display: flex;
-    justify-content: ;
-}
-
-
-.main-container{
-    display: flex;
-    height: 800px;
-    background-color: beige;
-}
-
- .main-container-left{
-    background-color:   rgb(22, 45, 57);
-    width: 20%;
-    display: flex;
     justify-content: center;
-    border: solid 4px red;
-    font-size: 21px;
-    padding-top: 30px;
-    }
-
-a{
-    color:beige;
+    min-height: 100vh;
 }
 
-.main-container-right{
-    width: 80%;
-    border: solid 6px black;
-    display:flex;
-   }
-
-.footer-container{
-    display: flex;
-    height: 30px;
-    justify-content: center;
-    align-items: center;
-    background-color:  rgb(22, 45, 57);
-    display:flex;
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
-form{
-    max-width: 200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: beige;
-    border-radius: 10px;
-}
-form label{
-    display: block;
-    margin-bottom: 10px;
-}
-form label span{
-    display: block;
-    width: 150px;
-    float: left; 
-}
-form button{
-    background-color: blueviolet;
-    padding: 10px;
-    border-radius: 10px;
-    cursor:pointer;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-input#name:hover{
-    border: 2px solid black;
+nav ul li {
+    display: inline;
+    margin-right: 15px;
 }
-input#phone:hover{
-    border: 2px solid black;
+
+nav ul li a {
+    text-decoration: none;
+    color: #3498db;
 }
-input#email:hover{
-    border: 2px solid black;
+
+nav ul li a:hover {
+    color: #2980b9;
 }
-input#company:hover{
-    border: 2px solid black;
-}
-input#country:hover{
-    border: 2px solid black;
-}
-input#description:hover{
-    border: 2px solid black;
-}
-button[type="submit"]:hover{
-    background-color: pink;
-    
-} */

@@ -27,19 +27,19 @@ const app = express();
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// // middleware to request and log time
-// app.use((req, res, next) => {
-//   req.requestTime = new Date().toString();
-//   next();
-// });
+// // // middleware to request and log time
+app.use((req, res, next) => {
+  req.requestTime = new Date().toString();
+  next();
+});
 
-// app.use((req, res, next) => {
+// // app.use((req, res, next) => {
 //   console.log('Request Time:', req.requestTime);
 //   next();
-// });
+
 
 //  Show where static files are in 
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))

@@ -5,9 +5,11 @@ const router = express.Router();
 const productController = new ProductController();
 
 // Route to get all products
+
 router.get('/', async (req, res) => {
   try {
     const products = await productController.getAllProducts();
+    console.log(products);
     res.render('products', { products });
   } catch (error) {
     res.status(500).send(error.message);
@@ -16,9 +18,9 @@ router.get('/', async (req, res) => {
 
 // Route to add a new product
 router.post('/add', async (req, res) => {
-  const { title, price, description, category } = req.body;
+  const { name, price, description, category } = req.body;
   try {
-    await productController.create({ title, price, description, category });
+    await productController.create({ name, price, description, category });
     res.redirect('/products');
   } catch (error) {
     res.status(500).send(error.message);
@@ -27,11 +29,11 @@ router.post('/add', async (req, res) => {
 
 // Route to update an existing product
 router.post('/update', async (req, res) => {
-  const { id, title, price, description, category } = req.body;
+  const { id, name, price, description, category } = req.body;
   try {
-    await productController.update({ title, price, description, category }, id);
+    await productController.update({ name, price, description, category }, id);
     res.redirect('/products');
-  } catch (error) {
+  } catch (error){
     res.status(500).send(error.message);
   }
 });

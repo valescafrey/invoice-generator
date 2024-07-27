@@ -155,7 +155,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Company</li>
+              <li class="breadcrumb-item active">Client</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -177,42 +177,30 @@
              <!-- general form elements -->
              <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">COMPANY DETAILS</h3>
+                  <h3 class="card-title">NEW CLIENT</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form>
+                <form action="/clients/add" method="POST">
                   <div class="card-body">
                     <div class="form-group">
                       <label for="inputProduct">Name</label>
-                      <input type="Name" class="form-control" id="companyName" placeholder="Enter company name">
+                      <input type="Name" class="form-control" id="clientName" placeholder="Enter client name">
                     </div>
                     <div class="form-group">
                       <label for="inputDescription">Email</label>
-                      <input type="email" class="form-control" id="companyEmail" placeholder="Enter company email">
+                      <input type="email" class="form-control" id="clientEmail" placeholder="Enter client email">
                     </div>
                     <div class="form-group">
                         <label for="inputPhone">Phone</label>
-                        <input type="phone" class="form-control" id="companyPhone" placeholder="Phone">
+                        <input type="phone" class="form-control" id="clientPhone" placeholder="Phone">
                       </div>
                       <div class="form-group">
                         <label for="Adress">Address</label>
-                        <input type="address" class="form-control" id="companyAddress" placeholder="Company address">
+                        <input type="address" class="form-control" id="clientAddress" placeholder="Client address">
                       </div>
 
-                    <div class="form-group">
-                      <label for="inputLogo">Logo
-                      </label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="companyLogo">
-                          <label class="custom-file-label" for="exampleInputFile">Upload company logo</label>
-                        </div>
-                        <div class="input-group-append">
-                          <span class="input-group-text">Upload</span>
-                        </div>
-                      </div>
-                    </div>
+                   
                     
                   </div>
                   <div class="card-footer">

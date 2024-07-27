@@ -21,7 +21,7 @@ class ClientController {
 
   async create(client) {
     const [result] = await db.query(
-      'INSERT INTO clients (name, address, phone, email) VALUES (?, ?, ?, ?)',
+      'INSERT INTO clients (name_client, address_client, phone_client, email_client) VALUES (?, ?, ?, ?)',
       [client.name, client.address, client.phone, client.email]
     );
     return result.insertId;

@@ -48,7 +48,7 @@
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
-          <form class="form-inline" action="/productRoutes/add" method="POST">
+          <form class="form-inline" action="/products/add" method="POST">
             <div class="input-group input-group-sm">
               <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
@@ -155,7 +155,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Company</li>
+              <li class="breadcrumb-item active">Product</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -177,36 +177,37 @@
              <!-- general form elements -->
              <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">COMPANY DETAILS</h3>
+                  <h3 class="card-title">NEW PRODUCT</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form>
                   <div class="card-body">
                     <div class="form-group">
-                      <label for="inputProduct">Name</label>
-                      <input type="Name" class="form-control" id="companyName" placeholder="Enter company name">
+                      <label for="inputProduct">Product</label>
+                      <input type="product" class="form-control" id="product" placeholder="Enter product name">
                     </div>
                     <div class="form-group">
-                      <label for="inputDescription">Email</label>
-                      <input type="email" class="form-control" id="companyEmail" placeholder="Enter company email">
+                      <label for="inputDescription">Description</label>
+                      <input type="description" class="form-control" id="description" placeholder="Enter a description">
                     </div>
                     <div class="form-group">
-                        <label for="inputPhone">Phone</label>
-                        <input type="phone" class="form-control" id="companyPhone" placeholder="Phone">
+                        <label for="inputPrice">Price</label>
+                        <input type="price" class="form-control" id="price" placeholder="Price">
                       </div>
                       <div class="form-group">
-                        <label for="Adress">Address</label>
-                        <input type="address" class="form-control" id="companyAddress" placeholder="Company address">
+                        <label for="quantity">Quantity</label>
+                        <input type="quantity" class="form-control" id="quantity" placeholder="Default quantity">
                       </div>
 
+
+
                     <div class="form-group">
-                      <label for="inputLogo">Logo
-                      </label>
+                      <label for="inputImage">Image</label>
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="companyLogo">
-                          <label class="custom-file-label" for="exampleInputFile">Upload company logo</label>
+                          <input type="file" class="custom-file-input" id="productImage">
+                          <label class="custom-file-label" for="exampleInputFile">Upload a product image</label>
                         </div>
                         <div class="input-group-append">
                           <span class="input-group-text">Upload</span>

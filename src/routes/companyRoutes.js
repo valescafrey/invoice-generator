@@ -1,6 +1,7 @@
 import express from 'express';
 import CompanyController from '../controllers/companyController.js';
 
+// create a route for company
 const router = express.Router();
 const companyController = new CompanyController();
 

@@ -9,6 +9,10 @@ router.get('/', async (req, res) => {
   res.render('clients', { clients });
 });
 
+router.get('/create-clients', (req, res) => {
+  res.render('create-clients'); 
+});
+
 router.post('/add', async (req, res) => {
   const { name, address, phone, email } = req.body;
   await clientController.create({ name, address, phone, email });

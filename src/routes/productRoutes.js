@@ -9,10 +9,11 @@ const productController = new ProductController();
 router.get('/', async (req, res) => {
   try {
     const products = await productController.getAllProducts();
-    console.log(products);
-    res.render('products', { products });
+    console.log('Fetched Products:', products); // Debug: Check if products are being fetched
+    res.render('products', { products }); // Ensure products are being passed to the template
   } catch (error) {
-    res.status(500).send(error.message);
+    console.error('Error rendering products:', error);
+    res.status(500).send('Server Error');
   }
 });
 

@@ -1,9 +1,8 @@
-import db from '../config/db.js';
 
 class Product {
-  constructor(id, title, price, description, category, images) {
+  constructor(id, name, price, description, images) {
     this.id = id;
-    this.title = title;
+    this.name = name;
     this.price = price;
     this.description = description;
   }

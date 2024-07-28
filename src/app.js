@@ -12,8 +12,8 @@ import { fileURLToPath } from 'url';
 // inform routes
 import companyRoutes from './routes/companyRoutes.js';
 import clientRoutes from './routes/clientRoutes.js';
-import productRoutes from './routes/productRoutes.js';
 import invoiceRoutes from './routes/invoiceRoutes.js';
+import productsRouter from './routes/productRoutes.js';
 
 // get directory
 const __filename = fileURLToPath(import.meta.url);
@@ -48,7 +48,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 // routes
 app.use('/companies', companyRoutes);
 app.use('/clients', clientRoutes);
-app.use('/products', productRoutes);
+app.use('/create-clients', clientRoutes);
+app.use('/products', productsRouter);
 app.use('/invoices', invoiceRoutes);
 
 // Render the home page

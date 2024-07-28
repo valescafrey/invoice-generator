@@ -166,7 +166,7 @@
     <!-- Main content -->
 
                   <div class="card-footer">
-                    <button type="newProduct" class="btn btn-primary">NEW PRODUCT</button>
+                    <button type="newProduct" class="btn btn-primary" href="/create-products.ejs">NEW PRODUCT</button>
                   </div>
 
                   <section class="content">
@@ -186,20 +186,23 @@
                                  <th>Name</th>
                                   <th>Description</th>
                                     <th>Price</th>
-                                    <th>Category</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                  <% products.forEach(product => { %>
+                                  <% if (products.length) { %>
+                                    <% products.forEach(product => { %>
+                                      <tr>
+                                        <td><%= product.id %></td>
+                                        <td><%= product.name %></td>
+                                        <td><%= product.description %></td>
+                                        <td><%= product.price %></td>
+                                      </tr>
+                                    <% }) %>
+                                  <% } else { %>
                                     <tr>
-                                      
-                                      <td><%= product.id %></td>
-                                      <td><%= product.name %></td>
-                                      <td><%= product.description %></td>
-                                      <td><%= product.price %></td>
-                                      <td><%= product.category %></td>
+                                      <td colspan="5">No products found.</td>
                                     </tr>
-                                  <% }) %>
+                                  <% } %>
                                 </tbody>
 
                             

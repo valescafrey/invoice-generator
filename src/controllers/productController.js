@@ -8,8 +8,8 @@ class ProductController {
 
   async update(product, id) {
     const [result] = await db.query(
-      'UPDATE products SET title = ?, price = ?, description = ?, category = ? WHERE id = ?',
-      [product.title, product.price, product.description, product.category, id]
+      'UPDATE products SET  name = ?, price = ?, description = ? WHERE id = ?',
+      [product.name, product.price, product.description,  id]
     );
     return result.affectedRows;
   }
@@ -21,27 +21,22 @@ class ProductController {
 
   async create(product) {
     const [result] = await db.query(
-      'INSERT INTO products (title, price, description, category) VALUES (?, ?, ?, ?)',
-      [product.title, product.price, product.description, product.category]
+      'INSERT INTO products ( name, price, description ) VALUES (?, ?, ?, ?)',
+      [product. name, product.price, product.description]
     );
     return result.insertId;
   }
 
   async getAllProducts() {
-    const [rows] = await db.query('SELECT * FROM products');
-    this.products = rows.map(
-      (row) =>
-        new Product(
-          row.id,
-          row.title,
-          row.price,
-          row.description,
-          row.category,
-          row.images
-        )
-    );
-    return this.products;
+    try {
+      const [rows] = await db.query('SELECT * FROM products');
+      return rows;
+    } catch (error) {
+      console.error('Database query failed:', error);
+      throw error;
+    }
   }
+
 
   async getProductById(id) {
     const [rows] = await db.query('SELECT * FROM products WHERE id = ?', [id]);
@@ -49,10 +44,9 @@ class ProductController {
       (row) =>
         new Product(
           row.id,
-          row.title,
+          row. name,
           row.price,
           row.description,
-          row.category,
           row.images
         )
     );

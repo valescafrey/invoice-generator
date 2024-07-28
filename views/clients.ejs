@@ -48,7 +48,7 @@
           <i class="fas fa-search"></i>
         </a>
         <div class="navbar-search-block">
-          <form class="form-inline" action="/productRoutes/add" method="POST">
+          <form class="form-inline">
             <div class="input-group input-group-sm">
               <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
@@ -155,7 +155,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/">Home</a></li>
-              <li class="breadcrumb-item active">Client</li>
+              <li class="breadcrumb-item active">ClientList</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -164,48 +164,50 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
 
-       <!-- Default box -->
-       <div class="card">
-        <div class="card-header">
-          <h1 class="card-title"></h1>
-
-          <div class="card-tools"> </div>
-        </div>
-        <div class="card-body">
-             <!-- general form elements -->
-             <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">NEW CLIENT</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form action="/clients/add" method="POST">
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="inputProduct">Name</label>
-                      <input type="Name" class="form-control" id="clientName" placeholder="Enter client name">
-                    </div>
-                    <div class="form-group">
-                      <label for="inputDescription">Email</label>
-                      <input type="email" class="form-control" id="clientEmail" placeholder="Enter client email">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPhone">Phone</label>
-                        <input type="phone" class="form-control" id="clientPhone" placeholder="Phone">
-                      </div>
-                      <div class="form-group">
-                        <label for="Adress">Address</label>
-                        <input type="address" class="form-control" id="clientAddress" placeholder="Client address">
-                      </div>
-
-                   
-                    
-                  </div>
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="newClient" class="btn btn-primary"><a href="/create-clients" class="btn btn-primary">NEW CLIENT</a> </button>
                   </div>
+
+                  <section class="content">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="card">
+                            <div class="card-header">
+                              <h3 class="card-title">List of clients</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                              <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                  <th>ID</th>
+                                 <th>Name</th>
+                                  <th>Address</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                  <% clients.forEach(client => { %>
+                                    <tr>
+                                      
+                                      <td><%= client.id %></td>
+                                      <td><%= client.name %></td>
+                                      <td><%= client.address %></td>
+                                      <td><%= client.phone %></td>
+                                      <td><%= client.email %></td>
+                                    </tr>
+                                  <% }) %>
+                                </tbody>
+
+                            
+                             </table>
+                             </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
                   <!-- /.card-body -->
  
     </section>
@@ -233,9 +235,9 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="/public/adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="/adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="/public/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <!-- <script src="/public/js/adminlte.js"></script> -->
 
